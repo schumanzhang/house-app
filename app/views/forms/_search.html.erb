@@ -1,0 +1,17 @@
+<h3> Search for your dream home </h3>
+
+<%= form_tag houses_search_path do %>
+    <label>Number of bedrooms:</label><br>
+    <%= number_field_tag :'search[bed]' %><br>
+
+    <label>Number of bathrooms:</label><br>
+    <%= number_field_tag :'search[bath]' %><br>
+
+    <label>Number of car spaces:</label><br>
+    <%= number_field_tag :'search[car]' %><br>
+
+    <label>Size of the house:</label><br>
+    <%= number_field_tag :'search[size]' %><br>
+
+    <%= submit_tag "Submit Search" %>
+<% end %>

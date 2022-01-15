@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HouseApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <div class="menu">
+        <h2> Navigation menu section (TODO: put menu here) </h2> 
+    </div>
+
+    <%= yield %>
+
+    <div class="footer">
+        <h2> This is the footer section (TODO: put footer here) </h2> 
+    </div>
+    
+  </body>
+</html>

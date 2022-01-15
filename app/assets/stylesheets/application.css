@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+ .menu {
+     color:blueviolet;
+ }
+
+ .footer {
+     color: brown;
+ }

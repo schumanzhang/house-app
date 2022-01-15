@@ -1,0 +1,32 @@
+<br>
+<table>
+  <thead>
+    <tr>
+      <th>Address</th>
+      <th>Size</th>
+      <th>Sold</th>
+      <th>Bedroom</th>
+      <th>Bath</th>
+      <th>Car</th>
+      <th>Image</th>
+      <th>Last Updated</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @houses.each do |house| %>
+      <tr>
+        <td><%= house.address %></td>
+        <td><%= house.size %></td>
+        <td><%= house.sold %></td>
+        <td><%= house.bed %></td>
+        <td><%= house.bath %></td>
+        <td><%= house.garage %></td>
+        <td><%= image_tag(house.image, :size => "100x50") %><br /></td>
+        <td><%= last_updated house %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
