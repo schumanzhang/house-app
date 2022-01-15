@@ -22,3 +22,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+`rails generate model House address:string size:integer sold:boolean bed:integer bath:integer garage:integer image:string`
+`rails generate model Agent name:string area:string rating:float sold:integer`
