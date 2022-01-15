@@ -12,6 +12,7 @@
       <th>Car</th>
       <th>Image</th>
       <th colspan="1"></th>
+      <th>Agents</th>
       <th>Last Updated</th>
     </tr>
   </thead>
@@ -28,6 +29,14 @@
         <td><%= house.garage %></td>
         <td><%= image_tag(house.image, :size => "100x50") %><br /></td>
         <td><%= link_to 'Request Inspection', new_inspection_path %></td>
+        <td> 
+            <% house.agents.each do |agent| %>
+                <span>
+                    <%= agent.name %> 
+                    <br>
+                </span>
+            <% end %>
+        </td>
         <td><%= last_updated house %></td>
       </tr>
     <% end %>
