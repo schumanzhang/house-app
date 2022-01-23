@@ -1,4 +1,5 @@
 class Admin < ApplicationRecord
+    validates :username, length: { minimum: 5 }
 
     # lookup the has_secure_password that abstract the below
     # auto implement a password and password confirmation
@@ -11,11 +12,18 @@ class Admin < ApplicationRecord
         self.password_digest = salt + hashed
     end
 
-    def authenticate(password)
+    def check_admin(password)
         # generate_salt are always 29 chars long
+        puts "check_admin"
+        puts password
         salt = self.password_digest[0..28]
+
+        puts salt
         hashed = BCrypt::Engine::hash_secret(password, salt)
-        return nil unless (salt + hashed) == self.password_digest
+
+        puts salt + hashed
+        puts self.password_digest
+        return (salt + hashed) == self.password_digest
     end
 
 end

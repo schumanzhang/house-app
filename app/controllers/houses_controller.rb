@@ -1,6 +1,9 @@
 class HousesController < ApplicationController
     layout "main"
 
+    def dashboard
+    end
+
     def index
         puts "index"
         puts params

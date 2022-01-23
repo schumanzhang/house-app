@@ -1,1 +1,19 @@
 <h2> Admin Signup </h2>
+
+<%= form_tag sessions_signup_path do %>
+
+    <label>First name:</label><br>
+    <%= text_field_tag :'admin[firstname]' %><br>
+
+    <label>Last name:</label><br>
+    <%= text_field_tag :'admin[lastname]' %><br>
+
+    <label>Username:</label><br>
+    <%= text_field_tag :'admin[username]' %><br>
+
+    <label>Password:</label><br>
+    <%= password_field_tag :'admin[password]' %><br>
+
+    <br>
+    <%= submit_tag "Signup" %>
+<% end %>

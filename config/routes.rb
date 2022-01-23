@@ -5,13 +5,15 @@ Rails.application.routes.draw do
   # check this out in `rails routes`
   post "houses/search", to: "houses#search"
 
-  get "/login", to: "sessions#login"
-  get "/signup", to: "sessions#signup"
+  get "dashboard", to: "houses#dashboard"
 
-  post "/signup", to: "sessions#create"
-  post "/login", to: "sessions#authenticate"
+  get "login", to: "sessions#login"
+  get "signup", to: "sessions#signup"
 
-  post "/logout", to: "sessions#destroy"
+  post "sessions/signup", to: "sessions#create"
+  post "sessions/login", to: "sessions#authenticate"
+
+  post "logout", to: "sessions#destroy"
 
   # get "/dashboard", to: "houses#dashboard"
 
