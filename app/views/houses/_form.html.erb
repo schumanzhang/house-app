@@ -1,4 +1,13 @@
 <%= form_with(model: house) do |form| %>
+
+    <div class="field">
+    <%= form.label :address %>
+        <%= form.text_field :address %>
+    </div>
+
+    <div class="actions">
+        <%= form.submit %>
+    </div>
     
 <% end %>
   

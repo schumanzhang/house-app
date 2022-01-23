@@ -1,4 +1,5 @@
 class HousesController < ApplicationController
+    before_action :set_house, only: %i[ edit update destroy ]
     before_action :require_login
     skip_before_action :require_login, only: [:index, :search]
 
@@ -51,6 +52,10 @@ class HousesController < ApplicationController
     end
 
     private
+
+    def set_house
+        @house = House.find(params[:id])
+      end
 
     def extract_value(params, key)
         val = params.key?(key) && params[key] != "" ? params[key].to_i : 0
