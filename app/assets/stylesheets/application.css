@@ -21,3 +21,11 @@
  .footer {
      color: brown;
  }
+
+ .admin-menu {
+    color:green;
+ }
+
+ .admin-footer {
+    color:gray;
+ }

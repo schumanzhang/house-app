@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HouseApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <div class="admin-menu">
+        <h2> Admin menu section here </h2>
+
+        <%= form_tag logout_path do %>
+            <%= submit_tag "Log out" %>
+        <% end %>
+    </div>
+
+    <%= yield %>
+
+    <div class="admin-footer">
+        <h2> Admin footer section here </h2> 
+    </div>
+    
+  </body>
+</html>

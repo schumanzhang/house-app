@@ -16,6 +16,6 @@ class ApplicationController < ActionController::Base
     end
 
     def user_forbidden
-
+        render file: "#{Rails.root}/public/403.html", layout: true, status: :forbidden
     end
 end

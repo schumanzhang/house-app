@@ -1,13 +1,14 @@
 class HousesController < ApplicationController
+    before_action :require_login
+    skip_before_action :require_login, only: [:index, :search]
+
     layout "main"
 
     def dashboard
+        render layout: "admin"
     end
 
     def index
-        puts "index"
-        puts params
-
         # start with
         # @houses = House.all
 
@@ -34,6 +35,10 @@ class HousesController < ApplicationController
 
     def search_params
         params.require(:search).permit(:bed, :bath, :car, :size)
+    end
+
+    def require_login
+        return user_forbidden unless session.include? :username
     end
 
 end
