@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :houses, only: [:index]
+  resources :houses, only: [:index, :new, :edit, :update, :create]
   resources :inspections, only: [:create, :new]
 
   # check this out in `rails routes`

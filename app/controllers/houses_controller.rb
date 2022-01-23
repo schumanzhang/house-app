@@ -5,6 +5,8 @@ class HousesController < ApplicationController
     layout "main"
 
     def dashboard
+        @houses = House.all
+        @agents = Agent.all
         render layout: "admin"
     end
 
@@ -16,6 +18,28 @@ class HousesController < ApplicationController
             extract_value(params, "bed"), extract_value(params, "bath"), extract_value(params, "car"), extract_value(params, "size"))
 
         # NOTE you can inject other models in here as well 
+    end
+
+    def new
+
+        render layout: "admin"
+    end
+
+    def edit
+
+        render layout: "admin"
+    end
+
+    def create
+
+    end
+
+    def update
+
+    end
+
+    def destroy
+        @house.destroy
     end
 
     # search form submission

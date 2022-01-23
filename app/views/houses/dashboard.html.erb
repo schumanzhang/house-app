@@ -1,1 +1,80 @@
 <h2> Welcome to the admin dashboard </h2>
+
+<br>
+
+<h3> Houses </h3>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Address</th>
+      <th>Size</th>
+      <th>Sold</th>
+      <th>Bedroom</th>
+      <th>Bath</th>
+      <th>Car</th>
+      <th>Image</th>
+      <th>Agents</th>
+      <th>Last Updated</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @houses.each do |house| %>
+      <tr>
+        <td><%= house.id %></td>
+        <td><%= house.address %></td>
+        <td><%= house.size %></td>
+        <td><%= house.sold %></td>
+        <td><%= house.bed %></td>
+        <td><%= house.bath %></td>
+        <td><%= house.garage %></td>
+        <td><%= image_tag(house.image, :size => "100x50") %><br /></td>
+        <td> 
+            <% house.agents.each do |agent| %>
+                <span>
+                    <%= agent.name %> 
+                    <br>
+                </span>
+            <% end %>
+        </td>
+        <td><%= last_updated house %></td>
+        <td><%= link_to 'Edit', edit_house_path(house) %></td>
+        <td><%= link_to 'Delete', house, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<h3> Agents </h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Area</th>
+      <th>Rating</th>
+      <th>Sold</th>
+      <th>Last Updated</th>
+    </tr>
+  </thead>
+
+    <tbody>
+    <% @agents.each do |agent| %>
+        <tr>
+        <td><%= agent.id %></td>
+        <td><%= agent.name %></td>
+        <td><%= agent.area %></td>
+        <td><%= agent.rating %></td>
+        <td><%= agent.sold %></td>
+        <td><%= last_updated agent %></td>
+        </tr>
+    <% end %>
+    </tbody>
+</table>
+
+
+<br>
