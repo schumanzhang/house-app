@@ -1,9 +1,6 @@
 <h3> Schedule a new inspection </h3>
 
-<%= form_tag inspections_path do %>
-    <label>ID of the house to inspect:</label><br>
-    <%= number_field_tag :'inspection[house_id]' %><br>
-
+<%= form_tag house_inspections_path do %>
     <label>Your name:</label><br>
     <%= text_field_tag :'inspection[name]' %><br>
 

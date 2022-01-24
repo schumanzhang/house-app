@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  resources :houses, only: [:index, :new, :edit, :update, :create, :destroy]
-  resources :inspections, only: [:create, :new]
+  resources :houses, only: [:index, :new, :edit, :update, :create, :destroy] do
+    resources :inspections, only: [:create, :new]
+  end
+  # resources :inspections, only: [:create, :new]
 
   # check this out in `rails routes`
   post "houses/search", to: "houses#search"

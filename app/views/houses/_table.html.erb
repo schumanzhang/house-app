@@ -28,7 +28,7 @@
         <td><%= house.bath %></td>
         <td><%= house.garage %></td>
         <td><%= image_tag(house.image, :size => "100x50") %><br /></td>
-        <td><%= link_to 'Request Inspection', new_inspection_path %></td>
+        <td><%= link_to 'Request Inspection', new_house_inspection_path(house.id) %></td>
         <td> 
             <% house.agents.each do |agent| %>
                 <span>

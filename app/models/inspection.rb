@@ -4,6 +4,7 @@ class Inspection < ApplicationRecord
     validates :day, presence: true
     validates :house_id, presence: true
     validates :comment, presence: true
+    validates :contact, presence: true
 
     belongs_to :house
 end
