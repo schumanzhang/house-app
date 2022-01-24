@@ -22,25 +22,34 @@ class HousesController < ApplicationController
     end
 
     def new
-
+        @house = House.new
         render layout: "admin"
     end
 
     def edit
-
         render layout: "admin"
     end
 
     def create
-
+        @house = House.new(house_params)
+        if @house.save
+            redirect_to '/dashboard'
+        else
+            user_error
+        end
     end
 
     def update
-
+        if @house.update(house_params)
+            redirect_to '/dashboard'
+        else
+            user_error
+        end
     end
 
     def destroy
         @house.destroy
+        redirect_to '/dashboard'
     end
 
     # search form submission
@@ -52,6 +61,11 @@ class HousesController < ApplicationController
     end
 
     private
+
+    # only a trusted list of params here
+    def house_params
+        params.require(:house).permit(:address, :size, :sold, :bed, :bath, :garage, :image)
+    end
 
     def set_house
         @house = House.find(params[:id])

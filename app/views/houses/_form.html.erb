@@ -1,8 +1,45 @@
 <%= form_with(model: house) do |form| %>
 
     <div class="field">
-    <%= form.label :address %>
-        <%= form.text_field :address %>
+        <%= form.label :address %>
+            <%= form.text_field :address %>
+        </div>
+    </div>
+    
+    <div class="field">
+        <%= form.label :size %>
+            <%= form.number_field :size %>
+        </div>
+    </div>
+
+    <div class="field">
+        <%= form.label :bed %>
+            <%= form.number_field :bed %>
+        </div>
+    </div>
+
+    <div class="field">
+        <%= form.label :bath %>
+            <%= form.number_field :bath %>
+        </div>
+    </div>
+
+    <div class="field">
+        <%= form.label :car %>
+            <%= form.number_field :garage %>
+        </div>
+    </div>
+
+    <div class="field">
+        <%= form.label :image %>
+            <%= form.text_field :image %>
+        </div>
+    </div>
+
+    <div class="field">
+        <%= form.label :sold %>
+            <%= form.select :sold, [["True", true], ["False", false]] %>
+        </div>
     </div>
 
     <div class="actions">
