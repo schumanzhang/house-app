@@ -1,30 +1,38 @@
-# README
+# House App
+This is a demo of how to build a fullstack content management system (CMS) using Ruby of Rails. It contains the management of resources such as houses, agents and inspections.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Pre-requisite
+Ruby and Ruby of rails should be installed.
+`gem install rails`
 
-Things you may want to cover:
+## Start the app
+`rails server`
 
-* Ruby version
+## Use the rails console
+Use the Rails console to directly interact with your domain model. You can interact directly with ActiveRecord objects.
+`rails console`
 
-* System dependencies
+## See current routes
+Rails routes are configured in config/routes.rb. To see current routes and their associated prefixes.
+`rails routes`
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
+## Generating models
+The following example commands generates active record models
 `rails generate model House address:string size:integer sold:boolean bed:integer bath:integer garage:integer image:string`
-`rails generate model Agent name:string area:string rating:float sold:integer`
+
+## Applying db migrations
+After generating models you need to applying migrations to change the database schema
+`rails db:migrate`
+
+## Generate a migration file
 `rails generate migration CreateHousesAgentsJoinTable`
 
-`rake db:seed`
+## Applying database seeds
+Seeds allow database to be initiated with some sample data. Just use active record in your db/seeds.rb file
+`rails db:seed`
+
+## Authentication
+Session based authentication is implemented in this demo.
+Ensure `gem 'bcrypt', '~> 3.1.7'` in your Gemfile is uncommented and run 
+`bundle install`
+
